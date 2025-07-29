@@ -10,7 +10,7 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col min-h-[400px]">
       <div className="aspect-w-1 aspect-h-1">
         <img
           src={product.thumbnail}
@@ -18,14 +18,14 @@ const ProductCard = ({ product }) => {
           className="w-full h-48 object-cover"
         />
       </div>
-      <div className="p-4">
+      <div className="p-4 flex flex-col flex-grow">
         <h3 className="text-lg font-semibold text-gray-800 mb-2 line-clamp-2">
           {product.title}
         </h3>
-        <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+        <p className="text-gray-600 text-sm mb-3 line-clamp-2 flex-grow">
           {product.description}
         </p>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mt-auto">
           <span className="text-xl font-bold text-green-600">
             ${product.price}
           </span>
