@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Async thunk for fetching products
 export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
   async () => {
@@ -25,7 +24,7 @@ const productSlice = createSlice({
     setSearchTerm: (state, action) => {
       state.searchTerm = action.payload;
       
-      // Filter products locally based on search term
+      
       if (action.payload === '') {
         state.filteredItems = state.items;
       } else {
